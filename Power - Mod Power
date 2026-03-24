@@ -1,0 +1,5 @@
+a = 3
+b = 4
+m = 5
+print(a**b)
+print(a**b%m)
