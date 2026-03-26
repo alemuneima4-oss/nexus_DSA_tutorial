@@ -1,0 +1,14 @@
+class Solution:
+    def sumOfTheDigitsOfHarshadNumber(self, x: int) -> int:
+        new_num = x
+        sum = 0
+        while new_num > 0:
+            y = new_num % 10
+            sum += y
+            new_num //= 10
+        if x%sum == 0:
+            return sum
+        else:
+            return -1
+
+
