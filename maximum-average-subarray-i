@@ -14,6 +14,19 @@ class Solution:
                 total = total-nums[i-1]+nums[k]
                 i += 1
                 k += 1
-        return max_total/old_k
+        return max_total/old_k    
+
+or
+
+
+class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        max_sum = sum(nums[:k])
+        max_average = max_sum/k
+        for end in range(k,len(nums)):
+            max_sum -= nums[end-k]
+            max_sum += nums[end]
+            max_average = max(max_sum/k,max_average)
+        return max_average
 
         
