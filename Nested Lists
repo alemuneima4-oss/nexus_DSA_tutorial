@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+    students = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        students.append([name,score])
+    scores = sorted(set(student[1] for student in students))
+    sec_lo_score = scores[1]
+    names = sorted(student[0] for student in students if student[1] == sec_lo_score)
+        
+    for name in names:
+        print(name)
