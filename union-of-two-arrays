@@ -1,0 +1,7 @@
+class Solution:    
+    def findUnion(self, a, b):
+        # code here
+        union = []
+        all = a + b
+        all = list(set(all))
+        return all
