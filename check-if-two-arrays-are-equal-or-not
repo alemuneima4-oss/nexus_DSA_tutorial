@@ -1,0 +1,4 @@
+class Solution:
+    def checkPermutation(self, a: list[int], b: list[int]) -> bool:
+        # code here
+        return sorted(a) == sorted(b)
