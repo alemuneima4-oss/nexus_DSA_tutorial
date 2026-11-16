@@ -1,0 +1,25 @@
+class Solution:
+    def pancakeSort(self, arr: list[int]) -> list[int]:
+        result = []
+
+        def flip(k):
+            arr[:k] = arr[:k][::-1]
+            result.append(k)
+
+        for size in range(len(arr), 1, -1):
+
+            # Find the largest element in the unsorted portion
+            max_index = arr[:size].index(max(arr[:size]))
+
+            # Only flip if the largest element is not already
+            # in its correct position
+            if max_index != size - 1:
+
+                # Move the largest element to the beginning
+                if max_index != 0:
+                    flip(max_index + 1)
+
+                # Move the largest element to its correct position
+                flip(size)
+
+        return result
